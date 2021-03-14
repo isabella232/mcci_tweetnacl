@@ -1,6 +1,3 @@
-[submodule "extra/reference_tweetnacl"]
-	path = extra/reference_tweetnacl
-	url = https://github.com/mcci-catena/reference_tweetnacl
 [submodule "extra/seatest"]
 	path = extra/seatest
 	url = https://github.com/mcci-usb/seatest
