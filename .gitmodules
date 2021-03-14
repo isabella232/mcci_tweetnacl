@@ -1,3 +1,0 @@
-[submodule "extra/seatest"]
-	path = extra/seatest
-	url = https://github.com/mcci-usb/seatest
