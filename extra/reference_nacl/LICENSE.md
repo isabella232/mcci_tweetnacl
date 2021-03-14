@@ -1,8 +1,8 @@
 # Public Domain Notice
 
-This is free and unencumbered software released into the public domain. MCCI Corporation ("MCCI") accessed the software on 2021-03-13 at which point it was accompanied by the following notice:
+This is free and unencumbered software released into the public domain. MCCI Corporation ("MCCI") accessed the software on 2021-03-13; the files contain public-domain notices, and the website contains the following statement.
 
-[![TweetNaCl heading with public domain notice](assets/TweetNaCl-Heading-20210313.png)](https://tweetnacl.cr.yp.to/index.html)
+[![NaCl Features page public domain notice](assets/NaCl-public-domain.png)](http://nacl.cr.yp.to/features.html)
 
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
 
