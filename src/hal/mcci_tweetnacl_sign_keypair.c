@@ -76,6 +76,9 @@ mcci_tweetnacl_sign_keypair(
 		return rc == 0 ? 0 : MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED;
 		}
 
+	// restore old abort
+	mcci_tweetnacl_hal_randombytes_set_abort(save_env.pJmpBuf);
+
 	return mcci_tweetnacl_hal_randombytes_getlasterror();
 	}
 

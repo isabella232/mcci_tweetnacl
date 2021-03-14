@@ -82,19 +82,19 @@ typedef struct mcci_tweetnacl_sign_signature_s
 /// \param[out]	pPublicKey is set to the generated public key.
 /// \param[in]	pPrivateKey is set to the generated private key.
 ///
+/// \returns 0 for success, non-zero error code for failure.
+///
+/// \note this function requires that \c randombytes() be implemented and
+///	successful. Further, it requires a cryptographically secure string
+///	of bytes when \c randombytes() succeeds.
+///
 /// \see https://nacl.cr.yp.to/sign.html
 ///
-static inline void mcci_tweetnacl_sign_keypair(
+mcci_tweetnacl_randombytes_error_t
+mcci_tweetnacl_sign_keypair(
 	mcci_tweetnacl_sign_publickey_t *pPublicKey,
 	mcci_tweetnacl_sign_privatekey_t *pPrivateKey
-	)
-	{
-	extern int crypto_sign_ed25519_tweet_keypair(unsigned char *,unsigned char *);
-	(void) crypto_sign_ed25519_tweet_keypair(
-		pPublicKey->bytes,
-		pPrivateKey->bytes
-		);
-	}
+	);
 
 ///
 /// \brief Return size of signature, in bytes

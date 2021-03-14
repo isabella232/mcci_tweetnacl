@@ -105,14 +105,7 @@ mcci_tweetnacl_randombytes_error_t
 mcci_tweetnacl_box_keypair(
 	mcci_tweetnacl_box_publickey_t *pPublicKey,
 	mcci_tweetnacl_box_privatekey_t *pPrivateKey
-	)
-	{
-	extern int crypto_box_curve25519xsalsa20poly1305_tweet_keypair(unsigned char *,unsigned char *);
-	(void) crypto_box_curve25519xsalsa20poly1305_tweet_keypair(
-		pPublicKey->bytes,
-		pPrivateKey->bytes
-		);
-	}
+	);
 
 ///
 /// \brief Precompute for public-key authenticated cryptographic operations
