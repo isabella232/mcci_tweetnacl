@@ -24,6 +24,8 @@ Author:
 
 #pragma once
 
+#include "mcci_tweetnacl.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -94,10 +96,12 @@ typedef struct mcci_tweetnacl_box_beforenm_s
 /// \param[out] pPublicKey is set to the public key
 /// \param[in] pPrivateKey is set to the private key
 ///
-/// \note depends on an implementation of random.
+/// \returns error code; zero for success, non-zero for failure.
+///
+/// \note depends on an implementation of randombytes().
 /// \see https://nacl.cr.yp.to/box.html
 ///
-static inline void
+mcci_tweetnacl_randombytes_error_t
 mcci_tweetnacl_box_keypair(
 	mcci_tweetnacl_box_publickey_t *pPublicKey,
 	mcci_tweetnacl_box_privatekey_t *pPrivateKey

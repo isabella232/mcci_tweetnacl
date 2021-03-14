@@ -59,11 +59,28 @@ extern "C" {
 typedef struct mcci_tweetnacl_randombytes_driver_s *mcci_tweetnacl_randombytes_handle_t;
 
 ///
+/// \brief error codes from mcci_tweetnacl_randombytes_fn_t implementations errors
+///
+/// \ingroup mcci-tweetnacl
+///
+typedef enum mcci_tweetnacl_randombytes_error_e
+	{
+	MCCI_TWEETNACL_RANDOMBYTES_ERROR_SUCCESS = 0,			///< success (not an error)
+	MCCI_TWEETNACL_RANDOMBYTES_ERROR_UNKNOWN = 1,			///< bad param to mcci_tweetnacl_hal_randombytes_raise()
+	MCCI_TWEETNACL_RANDOMBYTES_ERROR_NOT_INITIALIZED = 2,		///< random number driver not intialized
+	MCCI_TWEETNACL_RANDOMBYTES_ERROR_INVALID_PARAMETER = 3,		///< invalid parameter
+	MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED = 4,		///< the related crypto API failed
+	} mcci_tweetnacl_randombytes_error_t;
+
+
+///
 /// \brief symbolic type for local random-number generator
 ///
 /// \param[in] hDriver is the driver handle supplied to MCCI TweetNaCl at initialization.
 /// \param[out] pOutBuffer points to the buffer to be filled
 /// \param[in] nBuffer specifies the size of \p pOutBuffer.
+///
+/// \returns error code; 0 for success, non-zero for failure.
 ///
 /// \note This function must provide a cryptographically strong RNG.
 /// If not provided, mcci_tweetnacl_sign_keypair() and mcci_tweetnacl_box_kaypair()
@@ -71,7 +88,7 @@ typedef struct mcci_tweetnacl_randombytes_driver_s *mcci_tweetnacl_randombytes_h
 ///
 /// \ingroup mcci-tweetnacl
 ///
-typedef void 
+typedef mcci_tweetnacl_randombytes_error_t 
 (mcci_tweetnacl_randombytes_fn_t)(
 	mcci_tweetnacl_randombytes_handle_t hDriver,
 	unsigned char *pOutBuffer,
@@ -141,6 +158,37 @@ mcci_tweetnacl_configure_randombytes(
 	mcci_tweetnacl_randombytes_fn_t *pRandomBytesFn,
 	mcci_tweetnacl_randombytes_handle_t hDriver
 	);
+
+///
+/// \brief Get the last error reported in the \c randombytes() mechanism.
+///
+/// \returns	last error code posted.
+///
+/// \note	The client must explicity call
+///		mcci_tweetnacl_hal_randombytes_setlasterror() to clear the
+///		last error if desired.
+///
+/// \ingroup mcci-tweetnacl
+///
+/// \see mcci_tweetnacl_hal_randombytes_setlasterror()
+///
+
+mcci_tweetnacl_randombytes_error_t
+mcci_tweetnacl_hal_randombytes_getlasterror(void);
+
+///
+/// \brief Change the last error cell for the \c randombytes() mechanism.
+///
+/// \ingroup mcci-tweetnacl
+///
+/// \see mcci_tweetnacl_hal_randombytes_getlasterror()
+///
+
+void
+mcci_tweetnacl_hal_randombytes_setlasterror(
+	mcci_tweetnacl_randombytes_error_t lastError
+	);
+
 
 /****************************************************************************\
 |
