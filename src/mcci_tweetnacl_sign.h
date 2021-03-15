@@ -149,7 +149,7 @@ mcci_tweetnacl_sign(
 ///		but should be ignored.
 ///
 /// \details
-///	This is a wrapper for TweetNaCl's `crypto_sign_out()`, enforcing a few adjustments.
+///	This is a wrapper for TweetNaCl's `crypto_sign_open()`, enforcing a few adjustments.
 ///	Size is a `size_t` rather than `unsigned long long`. Because
 ///	`crypto_sign_out()` productes an `unsigned long long` by reference, we have to stage
 ///	the result and narrow it when copying back to the client.

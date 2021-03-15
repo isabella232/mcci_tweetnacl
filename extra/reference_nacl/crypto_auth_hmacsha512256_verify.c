@@ -1,4 +1,4 @@
-#include "tweetnacl.h"
+#include "../reference_tweetnacl/tweetnacl.h"
 
 int crypto_auth_verify(const unsigned char *h,const unsigned char *in,unsigned long long inlen,const unsigned char *k)
 {

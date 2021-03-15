@@ -4,7 +4,7 @@
  * Public domain.
  * */
 
-#include "tweetnacl.h"
+#include "../reference_tweetnacl/tweetnacl.h"
 
 #define blocks crypto_hashblocks_sha512
 
