@@ -22,8 +22,9 @@ Author:
 
 #include "mcci_tweetnacl.h"
 #include "mcci_tweetnacl_hal.h"
-
+#include "mcci_tweetnacl_hal_internal.h"
 #include <setjmp.h>
+#include <stdint.h>
 
 /****************************************************************************\
 |
@@ -65,6 +66,7 @@ typedef struct
 /// \brief interface to random number source
 static mcci_tweetnacl_hal_randombytes_linkage_t sRandomInterface;
 
+mcci_tweetnacl_hal_jmp_buf_t
 mcci_tweetnacl_hal_randombytes_set_abort(
 	jmp_buf pEnv
 	)
@@ -84,7 +86,7 @@ mcci_tweetnacl_hal_randombytes_raise(
 		error = -1;
 
 	sRandomInterface.lastError = error;
-	longjmp((void *)sRandomInterface.Abort.pEnv, error);
+	longjmp((void *)sRandomInterface.Abort.pJmpBuf, error);
 	}
 
 mcci_tweetnacl_randombytes_error_t
@@ -103,7 +105,7 @@ mcci_tweetnacl_hal_randombytes_setlasterror(
 
 void
 mcci_tweetnacl_hal_randombytes(
-	unsigned char *pBuf,
+	unsigned char *pBuffer,
 	unsigned long long nBuffer
 	)
 	{
@@ -121,7 +123,7 @@ mcci_tweetnacl_hal_randombytes(
 			);
 
 	mcci_tweetnacl_randombytes_error_t const result =
-		(*pProvider)(pBuffer, (size_t) nBuffer);
+		(*pProvider)(sRandomInterface.hDriver, pBuffer, (size_t) nBuffer);
 
 	if (result != MCCI_TWEETNACL_RANDOMBYTES_ERROR_SUCCESS)
 		mcci_tweetnacl_hal_randombytes_raise(result);

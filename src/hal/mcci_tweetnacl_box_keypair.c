@@ -53,7 +53,6 @@ mcci_tweetnacl_box_keypair(
 	)
 	{
 	extern int crypto_box_curve25519xsalsa20poly1305_tweet_keypair(unsigned char *,unsigned char *);
-	mcci_tweetnacl_randombytes_error_t rc;
 	jmp_buf env;
 	volatile mcci_tweetnacl_hal_jmp_buf_t save_env;
 
@@ -71,7 +70,9 @@ mcci_tweetnacl_box_keypair(
 		mcci_tweetnacl_hal_randombytes_set_abort(save_env.pJmpBuf);
 
 		// return code.
-		return rc == 0 ? 0 : MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED;
+		return rc == 0 ? MCCI_TWEETNACL_RANDOMBYTES_ERROR_SUCCESS 
+			       : MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED
+			       ;
 		}
 
 	// restore old abort

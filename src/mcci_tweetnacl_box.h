@@ -241,7 +241,7 @@ mcci_tweetnacl_box(
 	size_t sizeText,
 	const mcci_tweetnacl_box_nonce_t *pNonce,
 	const mcci_tweetnacl_box_publickey_t *pPublicKey,
-	const mcci_tweetnacl_box_privatekey_s *pPrivateKey
+	const mcci_tweetnacl_box_privatekey_t *pPrivateKey
 	)
 	{
 	extern int crypto_box_curve25519xsalsa20poly1305_tweet(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *,const unsigned char *);
@@ -284,7 +284,7 @@ mcci_tweetnacl_box_open(
 	size_t sizeText,
 	const mcci_tweetnacl_box_nonce_t *pNonce,
 	const mcci_tweetnacl_box_publickey_t *pPublicKey,
-	const mcci_tweetnacl_box_privatekey_s *pPrivateKey
+	const mcci_tweetnacl_box_privatekey_t *pPrivateKey
 	)
 	{
 	extern int crypto_box_curve25519xsalsa20poly1305_tweet_open(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *,const unsigned char *);
