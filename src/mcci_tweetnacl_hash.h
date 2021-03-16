@@ -142,14 +142,14 @@ static inline void mcci_tweetnacl_hashblocks_sha512_init(
 /// \see https://nacl.cr.yp.to/hash.html
 ///
 static inline void mcci_tweetnacl_hashblocks_sha512_finish(
-	mcci_tweetnacl_sha512_t *pState,
+	mcci_tweetnacl_sha512_t *pHash,
 	const unsigned char *pMessage,
 	size_t nMessage
 	)
 	{
 	extern int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *,const unsigned char *,unsigned long long);
 	(void) crypto_hashblocks_sha512_tweet_mcci_finish(
-		pState->bytes,
+		pHash->bytes,
 		pMessage,
 		nMessage
 		);
