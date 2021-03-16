@@ -1,10 +1,10 @@
 # MCCI TweetNaCl for embedded systems and Arduino
 
-[NaCl](https://nacl.cr.yp.to/index.html) ("Networking and Cryptography Library", pronounced "salt") is a leading public-domain, light-weight library of important cryptographic algorigthm implementations, designed to avoid the fundamental sources of security failures in larger cryptography libraries.
+[NaCl](https://nacl.cr.yp.to/index.html) ("Networking and Cryptography Library", pronounced "salt") is a public-domain, light-weight library of important cryptographic algorigthm implementations, designed to avoid the fundamental sources of security failures in larger cryptography libraries.
 
-TweetNaCl ("tweet salt") is a concise version of NaCl that fits into one hundred 2014-era tweets, roughly 16,000 characters of source.
+TweetNaCl ("tweet salt") is a concise version of NaCl that fits into a hundred 2014-era tweets, roughly 16,000 characters of source.
 
-MCCI TweetNaCl is a curated version of TweetNaCl, extended with `crypto_auth()` from [NaCl](http://nacl.cr.yp.to/auth.html). It supports Arduino use, but also can be used in more general ways.
+MCCI TweetNaCl is a curated version of TweetNaCl, extended with `crypto_auth()` from [NaCl](http://nacl.cr.yp.to/auth.html) and a few other helpful wrappers. It supports Arduino use, but also can be used in more general ways.
 
 ## References
 

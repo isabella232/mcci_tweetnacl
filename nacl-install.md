@@ -1,4 +1,4 @@
-# Solve NaCl wget install problem
+# Solving NaCl wget fetch problems
 
 ## Problem statement
 
