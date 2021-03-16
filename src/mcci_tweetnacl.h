@@ -142,6 +142,25 @@ mcci_tweetnacl_verify_32(
 	}
 
 ///
+/// \brief Compare two 64-byte buffers, in a time-invariant fashion
+///
+/// \param[in] x,y buffers to be compared.
+///	
+/// \see https://nacl.cr.yp.to/verify.html
+///
+/// \ingroup string-comparison
+///
+static inline bool
+mcci_tweetnacl_verify_64(
+	const unsigned char *x,
+	const unsigned char *y
+	)
+	{
+	extern int crypto_verify_64_tweet_mcci(const unsigned char *,const unsigned char *);
+	return crypto_verify_64_tweet_mcci(x, y) == 0;
+	}
+
+///
 /// \brief setup the random number generator connection
 ///
 /// \param[in]	pRandomBytesFn points to the function to be called by `randombytes`.

@@ -57,12 +57,6 @@ struct mcci_tweetnacl_sha512_s
 	unsigned char bytes[512 / 8];
 	};
 
-// /// \brief internal state of SHA512 engine
-// typedef struct mcci_tweetnacl_sha512_state_s
-// 	{
-// 	unsigned char bytes[64];
-// 	} mcci_tweetnacl_sha512_state_t;
-
 /****************************************************************************\
 |
 |	APIs
@@ -89,33 +83,77 @@ mcci_tweetnacl_hash_sha512(
 	(void) crypto_hash_sha512_tweet(pOut->bytes, pMessage, nMessage);
 	}
 
-// ///
-// /// \brief Partial calculation of sha512 hash of message
-// ///
-// /// \param[inout] pState carries the current state
-// /// \param[in] pMessage is the message to be hashed
-// /// \param[in] nMessage is the length of the message in bytes
-// ///
-// /// \return number of bytes not processed.
-// ///
-// /// \note Not very useful, as there's neither a way to initalize the state, nor
-// ///	a way to compute the final result from the state.
-// ///
-// /// \see https://nacl.cr.yp.to/hash.html
-// ///
-// static inline size_t mcci_tweetnacl_hashblocks_sha512(
-// 	mcci_tweetnacl_sha512_state_t *pState,
-// 	const unsigned char *pMessage,
-// 	size_t nMessage
-// 	)
-// 	{
-// 	extern int crypto_hashblocks_sha512_tweet(unsigned char *,const unsigned char *,unsigned long long);
-// 	return (size_t) crypto_hashblocks_sha512_tweet(
-// 		pState->bytes,
-// 		pMessage,
-// 		nMessage
-// 		);
-// 	}
+///
+/// \brief Partial calculation of sha512 hash of message
+///
+/// \param[inout] pState carries the current state
+/// \param[in] pMessage is the message to be hashed
+/// \param[in] nMessage is the length of the message in bytes
+///
+/// \return number of bytes not processed.
+///
+/// \see https://nacl.cr.yp.to/hash.html
+///
+static inline size_t mcci_tweetnacl_hashblocks_sha512(
+	mcci_tweetnacl_sha512_t *pState,
+	const unsigned char *pMessage,
+	size_t nMessage
+	)
+	{
+	extern int crypto_hashblocks_sha512_tweet(unsigned char *,const unsigned char *,unsigned long long);
+	return (size_t) crypto_hashblocks_sha512_tweet(
+		pState->bytes,
+		pMessage,
+		nMessage
+		);
+	}
+
+///
+/// \brief Partial calculation of sha512 hash of message
+///
+/// \param[out] pState is set to the initialization vector
+///
+/// \see https://nacl.cr.yp.to/hash.html
+///
+static inline void mcci_tweetnacl_hashblocks_sha512_init(
+	mcci_tweetnacl_sha512_t *pState
+	)
+	{
+	extern int crypto_hashblocks_sha512_tweet_mcci_init(unsigned char *);
+	(void) crypto_hashblocks_sha512_tweet_mcci_init(
+		pState->bytes
+		);
+	}
+
+///
+/// \brief Finish partial calculation of sha512 hash of message
+///
+/// \param[inout] pHash carries the current state
+/// \param[in] pMessage is the message to be hashed
+/// \param[in] nMessage is the length of the message in bytes
+///
+/// \details SHA512 processes the message in 128-byte chunks. 
+///	To accomodate variable-length text, SHA512 always appends
+///	some bytes, containing enough info to unambigiously represent the
+///	size of the message, even though its padding. This routine does
+///	that, assuming that all but nMessage % 128 bytes have already been
+///	incorporated in the hash.
+///
+/// \see https://nacl.cr.yp.to/hash.html
+///
+static inline void mcci_tweetnacl_hashblocks_sha512_finish(
+	mcci_tweetnacl_sha512_t *pState,
+	const unsigned char *pMessage,
+	size_t nMessage
+	)
+	{
+	extern int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *,const unsigned char *,unsigned long long);
+	(void) crypto_hashblocks_sha512_tweet_mcci_finish(
+		pState->bytes,
+		pMessage,
+		nMessage
+		);
+	}
 
 /****************************************************************************\
 |

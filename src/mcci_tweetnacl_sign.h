@@ -139,8 +139,8 @@ mcci_tweetnacl_sign(
 ///
 /// \param[out]	pMessage 	points to buffer to received verified message.
 /// \param[out]	pMessageSize	points to cell to receive size of verified message.
-/// \param[in]	pSignedMessage	input signed message
-/// \param[in]	messageSize	size of input message, in bytes
+/// \param[in]	pSignedMessage	input signed (opaque) message
+/// \param[in]	messageSize	size of signed message, in bytes
 /// \param[in]	pPublicKey	public key to be used to verify message.
 ///
 /// \returns true if successfully verified; in which case \p pMessage[] is set to the
@@ -155,7 +155,8 @@ mcci_tweetnacl_sign(
 ///	the result and narrow it when copying back to the client.
 ///
 /// \note
-///	The buffer at `pMessage` must be at least `messageSize` bytes long.
+////	messageSize must be at least 64.
+///	The buffer at `pMessage` must be at least `messageSize` - 64 bytes long.
 ///
 static inline bool
 mcci_tweetnacl_sign_ed25519_open(
