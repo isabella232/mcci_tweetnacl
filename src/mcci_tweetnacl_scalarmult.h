@@ -52,7 +52,7 @@ extern "C" {
 typedef struct
 	{
 	/// bytes of the group element
-	unsigned char group_bytes[32];
+	unsigned char bytes[32];
 	} mcci_tweetnacl_curve25519_group_element_t;
 
 /// \brief curve25519 scalar integer
@@ -60,7 +60,7 @@ typedef struct
 typedef struct
 	{
 	/// bytes of the scalar
-	unsigned char scalar_bytes[32];
+	unsigned char bytes[32];
 	} mcci_tweetnacl_curve25519_scalar_t;
 
 /****************************************************************************\
@@ -87,9 +87,9 @@ mcci_tweetnacl_scalarmult_curve25519(
 	{
 	extern int crypto_scalarmult_curve25519_tweet(unsigned char *,const unsigned char *,const unsigned char *);
 	(void) crypto_scalarmult_curve25519_tweet(
-		q->group_bytes,
-		p->group_bytes,
-		n->scalar_bytes
+		q->bytes,
+		p->bytes,
+		n->bytes
 		);
 	}
 
@@ -109,8 +109,8 @@ mcci_tweetnacl_scalarmult_curve25519_base(
 	{
 	extern int crypto_scalarmult_curve25519_tweet_base(unsigned char *,const unsigned char *);
 	(void) crypto_scalarmult_curve25519_tweet_base(
-		q->group_bytes,
-		n->scalar_bytes
+		q->bytes,
+		n->bytes
 		);
 	}
 
