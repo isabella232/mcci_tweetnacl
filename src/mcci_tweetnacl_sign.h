@@ -159,7 +159,7 @@ mcci_tweetnacl_sign(
 ///	The buffer at `pMessage` must be at least `messageSize` - 64 bytes long.
 ///
 static inline bool
-mcci_tweetnacl_sign_ed25519_open(
+mcci_tweetnacl_sign_open(
 	unsigned char *pMessage,
 	size_t *pMessageSize,
 	const unsigned char *pSignedMessage,
