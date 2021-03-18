@@ -411,17 +411,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>mcci_tweetnacl_sign_ed25519_open</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__crypto-sign.html</Path>
-    <Anchor>ga4125a077346e0c5b06461e9f14b2c825</Anchor>
-    <Abstract>given a signed message, verify and output signed contents</Abstract>
-    <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>mcci_tweetnacl_sign_keypair</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -429,6 +418,17 @@
     <Path>group__crypto-sign.html</Path>
     <Anchor>gac51e57fa76c278a30aa504ae04aaa212</Anchor>
     <Abstract>generate a private key and a corresponding public key</Abstract>
+    <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mcci_tweetnacl_sign_open</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__crypto-sign.html</Path>
+    <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
+    <Abstract>given a signed message, verify and output signed contents</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
   <Token>
@@ -581,17 +581,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>mcci_tweetnacl_sign_ed25519_open</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>group__crypto-sign.html</Path>
-    <Anchor>ga4125a077346e0c5b06461e9f14b2c825</Anchor>
-    <Abstract>given a signed message, verify and output signed contents</Abstract>
-    <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>mcci_tweetnacl_sign_keypair</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -599,6 +588,17 @@
     <Path>group__crypto-sign.html</Path>
     <Anchor>gac51e57fa76c278a30aa504ae04aaa212</Anchor>
     <Abstract>generate a private key and a corresponding public key</Abstract>
+    <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mcci_tweetnacl_sign_open</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__crypto-sign.html</Path>
+    <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
+    <Abstract>given a signed message, verify and output signed contents</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
   <Token>

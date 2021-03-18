@@ -141,14 +141,14 @@
               <Anchor>ga58df22b740b29986b5a84512b51a195d</Anchor>
              </Node>
              <Node>
-              <Name>mcci_tweetnacl_sign_ed25519_open</Name>
-              <Path>group__crypto-sign.html</Path>
-              <Anchor>ga4125a077346e0c5b06461e9f14b2c825</Anchor>
-             </Node>
-             <Node>
               <Name>mcci_tweetnacl_sign_keypair</Name>
               <Path>group__crypto-sign.html</Path>
               <Anchor>gac51e57fa76c278a30aa504ae04aaa212</Anchor>
+             </Node>
+             <Node>
+              <Name>mcci_tweetnacl_sign_open</Name>
+              <Path>group__crypto-sign.html</Path>
+              <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1143,14 +1143,14 @@
                 <Anchor>ga58df22b740b29986b5a84512b51a195d</Anchor>
                </Node>
                <Node>
-                <Name>mcci_tweetnacl_sign_ed25519_open</Name>
-                <Path>group__crypto-sign.html</Path>
-                <Anchor>ga4125a077346e0c5b06461e9f14b2c825</Anchor>
-               </Node>
-               <Node>
                 <Name>mcci_tweetnacl_sign_keypair</Name>
                 <Path>group__crypto-sign.html</Path>
                 <Anchor>gac51e57fa76c278a30aa504ae04aaa212</Anchor>
+               </Node>
+               <Node>
+                <Name>mcci_tweetnacl_sign_open</Name>
+                <Path>group__crypto-sign.html</Path>
+                <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
                </Node>
               </Subnodes>
              </Node>

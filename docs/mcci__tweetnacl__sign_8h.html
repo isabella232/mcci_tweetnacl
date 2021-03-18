@@ -121,12 +121,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga58df22b740b29986b5a84512b51a195d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-sign.html#ga58df22b740b29986b5a84512b51a195d">mcci_tweetnacl_sign</a> (unsigned char *pSignedMessage, size_t *pSignedMessageSize, const unsigned char *pMessage, size_t messageSize, const <a class="el" href="structmcci__tweetnacl__sign__privatekey__t.html">mcci_tweetnacl_sign_privatekey_t</a> *pPrivateKey)</td></tr>
 <tr class="memdesc:ga58df22b740b29986b5a84512b51a195d"><td class="mdescLeft">&#160;</td><td class="mdescRight">sign a message (typically a hash of the real message)  <a href="group__crypto-sign.html#ga58df22b740b29986b5a84512b51a195d">More...</a><br /></td></tr>
 <tr class="separator:ga58df22b740b29986b5a84512b51a195d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4125a077346e0c5b06461e9f14b2c825"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-sign.html#ga4125a077346e0c5b06461e9f14b2c825">mcci_tweetnacl_sign_ed25519_open</a> (unsigned char *pMessage, size_t *pMessageSize, const unsigned char *pSignedMessage, size_t messageSize, const <a class="el" href="structmcci__tweetnacl__sign__publickey__t.html">mcci_tweetnacl_sign_publickey_t</a> *pPublicKey)</td></tr>
-<tr class="memdesc:ga4125a077346e0c5b06461e9f14b2c825"><td class="mdescLeft">&#160;</td><td class="mdescRight">given a signed message, verify and output signed contents  <a href="group__crypto-sign.html#ga4125a077346e0c5b06461e9f14b2c825">More...</a><br /></td></tr>
-<tr class="separator:ga4125a077346e0c5b06461e9f14b2c825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac51e57fa76c278a30aa504ae04aaa212"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__mcci-tweetnacl.html#ga25680d384e1851830fb25337ed11ac1e">mcci_tweetnacl_randombytes_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-sign.html#gac51e57fa76c278a30aa504ae04aaa212">mcci_tweetnacl_sign_keypair</a> (<a class="el" href="structmcci__tweetnacl__sign__publickey__t.html">mcci_tweetnacl_sign_publickey_t</a> *pPublicKey, <a class="el" href="structmcci__tweetnacl__sign__privatekey__t.html">mcci_tweetnacl_sign_privatekey_t</a> *pPrivateKey)</td></tr>
 <tr class="memdesc:gac51e57fa76c278a30aa504ae04aaa212"><td class="mdescLeft">&#160;</td><td class="mdescRight">generate a private key and a corresponding public key  <a href="group__crypto-sign.html#gac51e57fa76c278a30aa504ae04aaa212">More...</a><br /></td></tr>
 <tr class="separator:gac51e57fa76c278a30aa504ae04aaa212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0790c80b4f1c1987615edb2e4508385"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-sign.html#gac0790c80b4f1c1987615edb2e4508385">mcci_tweetnacl_sign_open</a> (unsigned char *pMessage, size_t *pMessageSize, const unsigned char *pSignedMessage, size_t messageSize, const <a class="el" href="structmcci__tweetnacl__sign__publickey__t.html">mcci_tweetnacl_sign_publickey_t</a> *pPublicKey)</td></tr>
+<tr class="memdesc:gac0790c80b4f1c1987615edb2e4508385"><td class="mdescLeft">&#160;</td><td class="mdescRight">given a signed message, verify and output signed contents  <a href="group__crypto-sign.html#gac0790c80b4f1c1987615edb2e4508385">More...</a><br /></td></tr>
+<tr class="separator:gac0790c80b4f1c1987615edb2e4508385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a21205119c59ede8075075b426eaac46b"></a>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="mcci__tweetnacl__sign_8h.html">mcci_tweetnacl_sign.h</a></li>
-    <li class="footer">Generated on Tue Mar 16 2021 11:54:20 for MCCI TweetNaCl by
+    <li class="footer">Generated on Thu Mar 18 2021 17:07:03 for MCCI TweetNaCl by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>
