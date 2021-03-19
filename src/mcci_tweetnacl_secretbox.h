@@ -86,9 +86,9 @@ typedef struct mcci_tweetnacl_secretbox_key_s
 ///
 /// \return zero for successful encryption, non-zero for parameter validation failure.
 ///
-/// \note \p pPlainText must start with a string of 
+/// \note \p pPlainText must start with a string of
 ///	`sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of
 ///	\p pCipherText will be zero. Thus, the real ciphertext data is from
 ///	`pCipherText + sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` to
 ///	`pCihperText + sizeText - 1`.
@@ -126,9 +126,9 @@ mcci_tweetnacl_secretbox(
 ///
 /// \returns zero for successful decryption and authenticaion, non-zero otherwise.
 ///
-/// \note \p pCipherText must start with a string of 
+/// \note \p pCipherText must start with a string of
 ///	`sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of
 ///	\p pPlainText will be zero.  Thus, the real plaintext data is from
 ///	`pPlainText + sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` to
 ///	`pPlainText + sizeText - 1`.

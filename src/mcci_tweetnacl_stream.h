@@ -212,7 +212,7 @@ mcci_tweetnacl_stream(
 ///
 /// \see https://nacl.cr.yp.to/stream.html
 /// \see https://www.xsalsa20.com/
-/// \see crypto_onetimeauth 
+/// \see crypto_onetimeauth
 ///
 
 static inline void

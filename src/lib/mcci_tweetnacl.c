@@ -68,7 +68,7 @@ int crypto_hashblocks_sha512_tweet_mcci_finish(u8 *h,const u8 *m,u64 n)
 {
   u8 x[256];
   u64 i,b = n;
-  
+
   m += n;
   n &= 127;
   m -= n;

@@ -67,13 +67,13 @@ mcci_tweetnacl_sign_keypair(
 					pPublicKey->bytes,
 					pPrivateKey->bytes
 					);
-		
+
 		// restore old abort
 		mcci_tweetnacl_hal_randombytes_set_abort(save_env.pJmpBuf);
 
 		// return code.
 		// return code.
-		return rc == 0 ? MCCI_TWEETNACL_RANDOMBYTES_ERROR_SUCCESS 
+		return rc == 0 ? MCCI_TWEETNACL_RANDOMBYTES_ERROR_SUCCESS
 			       : MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED
 			       ;
 		}

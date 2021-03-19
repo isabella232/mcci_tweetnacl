@@ -115,7 +115,7 @@ mcci_tweetnacl_box_keypair(
 ///
 /// \see https://nacl.cr.yp.to/box.html
 ///
-static inline 
+static inline
 void mcci_tweetnacl_box_beforenm(
 	mcci_tweetnacl_box_beforenm_t *k,
 	const mcci_tweetnacl_box_publickey_t *pPublicKey,
@@ -141,9 +141,9 @@ void mcci_tweetnacl_box_beforenm(
 ///
 /// \return true for successful encryption, false for parameter validation failure.
 ///
-/// \note \p pPlainText must start with a string of 
+/// \note \p pPlainText must start with a string of
 ///	`sizeof(mcci_tweetnacl_box_messagezero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of
 ///	\p pCipherText will be zero. Thus, the real ciphertext data is from
 ///	`pCipherText + sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` to
 ///	`pCipherText + sizeText - 1`.
@@ -183,9 +183,9 @@ mcci_tweetnacl_box_afternm(
 ///
 /// \returns zero for successful decryption and authenticaion, -1 otherwise.
 ///
-/// \note \p pCipherText must start with a string of 
+/// \note \p pCipherText must start with a string of
 ///	`sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_box_messagezero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_box_messagezero_t::bytes)` bytes of
 ///	\p pPlainText will be zero.  Thus, the real plaintext data is from
 ///	`pPlainText + sizeof(mcci_tweetnacl_box_messagezero_t::bytes)` to
 ///	`pPlainText + sizeText - 1`.
@@ -224,9 +224,9 @@ mcci_tweetnacl_box_open_afternm(
 ///
 /// \return true for successful encryption, false for parameter validation failure.
 ///
-/// \note \p pPlainText must start with a string of 
+/// \note \p pPlainText must start with a string of
 ///	`sizeof(mcci_tweetnacl_box_messagezero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of
 ///	\p pCipherText will be zero. Thus, the real ciphertext data is from
 ///	`pCipherText + sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` to
 ///	`pCihperText + sizeText - 1`.
@@ -267,9 +267,9 @@ mcci_tweetnacl_box(
 ///
 /// \returns 0 for successful decryption and authentication, -1 otherwise.
 ///
-/// \note \p pCipherText must start with a string of 
+/// \note \p pCipherText must start with a string of
 ///	`sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of zero. The
-///	first `sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of 
+///	first `sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of
 ///	\p pPlainText will be zero.  Thus, the real plaintext data is from
 ///	`pPlainText + sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` to
 ///	`pPlainText + sizeText - 1`.

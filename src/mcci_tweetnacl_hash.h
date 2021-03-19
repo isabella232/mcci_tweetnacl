@@ -132,7 +132,7 @@ static inline void mcci_tweetnacl_hashblocks_sha512_init(
 /// \param[in] pMessage is the message to be hashed
 /// \param[in] nMessage is the length of the message in bytes
 ///
-/// \details SHA512 processes the message in 128-byte chunks. 
+/// \details SHA512 processes the message in 128-byte chunks.
 ///	To accomodate variable-length text, SHA512 always appends
 ///	some bytes, containing enough info to unambigiously represent the
 ///	size of the message, even though its padding. This routine does

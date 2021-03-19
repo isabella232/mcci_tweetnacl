@@ -125,7 +125,7 @@ mcci_tweetnacl_hal_randombytes(
 			MCCI_TWEETNACL_RANDOMBYTES_ERROR_INVALID_PARAMETER
 			);
 
-	mcci_tweetnacl_randombytes_fn_t * const pProvider = 
+	mcci_tweetnacl_randombytes_fn_t * const pProvider =
 		sRandomInterface.pProvider;
 
 	if (pProvider == NULL)
