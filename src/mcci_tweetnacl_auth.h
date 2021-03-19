@@ -104,11 +104,11 @@ mcci_tweetnacl_auth(
 /// \param[in] nMessage is the length of the message in bytes
 /// \param[in] pKey is the secret key that was used to generate the authenticator.
 ///
-/// \returns true if message passes the test, false otherwise.
+/// \returns zero if message passes the test, -1 otherwise.
 ///
 /// \see https://nacl.cr.yp.to/auth.html
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_auth_verify(
 	const mcci_tweetnacl_auth_authenticator_t *pAuth,
 	const unsigned char *pMessage,
@@ -122,7 +122,7 @@ mcci_tweetnacl_auth_verify(
 		pMessage,
 		nMessage,
 		pKey->bytes
-		) == 0;
+		);
 	}
 
 /****************************************************************************\

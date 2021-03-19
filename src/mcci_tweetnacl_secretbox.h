@@ -84,7 +84,7 @@ typedef struct mcci_tweetnacl_secretbox_key_s
 /// \param[in]	pNonce	  pointer to 24-byte nonce
 /// \param[in]	pKey	  pointer to 32-byte key buffer.
 ///
-/// \return true for successful encryption, false for parameter validation failure.
+/// \return zero for successful encryption, non-zero for parameter validation failure.
 ///
 /// \note \p pPlainText must start with a string of 
 ///	`sizeof(mcci_tweetnacl_secretbox_messagezero_t::bytes)` bytes of zero. The
@@ -96,7 +96,7 @@ typedef struct mcci_tweetnacl_secretbox_key_s
 /// \see https://nacl.cr.yp.to/secretbox.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_secretbox(
 	unsigned char *pCipherText,
 	const unsigned char *pPlainText,
@@ -112,7 +112,7 @@ mcci_tweetnacl_secretbox(
 		sizeText,
 		pNonce->bytes,
 		pKey->bytes
-		) == 0;
+		);
 	}
 
 ///
@@ -124,7 +124,7 @@ mcci_tweetnacl_secretbox(
 /// \param[in]	pNonce	  pointer to 24-byte nonce
 /// \param[in]	pKey	  pointer to 32-byte key buffer.
 ///
-/// \returns true for successful decryption and authenticaion, false otherwise.
+/// \returns zero for successful decryption and authenticaion, non-zero otherwise.
 ///
 /// \note \p pCipherText must start with a string of 
 ///	`sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of zero. The
@@ -136,7 +136,7 @@ mcci_tweetnacl_secretbox(
 /// \see https://nacl.cr.yp.to/secretbox.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_secretbox_open(
 	unsigned char *pPlainText,
 	const unsigned char *pCipherText,
@@ -152,7 +152,7 @@ mcci_tweetnacl_secretbox_open(
 		sizeText,
 		pNonce->bytes,
 		pKey->bytes
-		) == 0;
+		);
 	}
 
 /****************************************************************************\

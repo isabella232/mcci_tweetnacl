@@ -77,6 +77,17 @@ mcci_tweetnacl_hal_randombytes_set_abort(
 	return result;
 	}
 
+mcci_tweetnacl_result_t
+mcci_tweetnacl_configure_randombytes(
+	mcci_tweetnacl_randombytes_fn_t *pRandomBytesFn,
+	mcci_tweetnacl_randombytes_handle_t hDriver
+	)
+	{
+	sRandomInterface.pProvider = pRandomBytesFn;
+	sRandomInterface.hDriver = hDriver;
+	return MCCI_TWEETNACL_RESULT_SUCCESS;
+	}
+
 void
 mcci_tweetnacl_hal_randombytes_raise(
 	mcci_tweetnacl_randombytes_error_t error

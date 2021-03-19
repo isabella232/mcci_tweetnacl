@@ -45,7 +45,7 @@ Author:
 |
 \****************************************************************************/
 
-bool
+mcci_tweetnacl_result_t
 mcci_tweetnacl_sign(
 	unsigned char *pSignedMessage,
 	size_t *pSignedMessageSize,
@@ -60,7 +60,7 @@ mcci_tweetnacl_sign(
 	if (messageSize > SIZE_MAX - sizeof(mcci_tweetnacl_sign_signature_size()))
 		{
 		*pSignedMessageSize = 0;
-		return false;
+		return MCCI_TWEETNACL_RESULT_FAILED;
 		}
 
 	(void) crypto_sign_ed25519_tweet(
@@ -72,7 +72,7 @@ mcci_tweetnacl_sign(
 		);
 
 	*pSignedMessageSize = (size_t) sizeOut;
-	return true;
+	return MCCI_TWEETNACL_RESULT_SUCCESS;
 	}
 
 

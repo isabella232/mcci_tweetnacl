@@ -111,8 +111,8 @@ mcci_tweetnacl_sign_keypair(
 /// \param[in]	messageSize		size of input message, in bytes
 /// \param[in]	pPrivateKey		private key to be used to sign message.
 ///
-/// \returns true if successfully signed; in which case \p *pSignedMessageSize is set to
-///		the size. Otherwise false, in which case \p *pSignedMessageSize is zero.
+/// \returns zero if successfully signed; in which case \p *pSignedMessageSize is set to
+///		the size. Otherwise non-zero, in which case \p *pSignedMessageSize is zero.
 ///
 /// \details
 ///	This is a wrapper for TweetNaCl's `crypto_sign()`, enforcing a few adjustments.
@@ -126,7 +126,7 @@ mcci_tweetnacl_sign_keypair(
 ///	The buffer at `pSignedMessage` must be at least `messageSize + mcci_tweetnacl_sign_signature_size()`
 ///	bytes long.
 ///
-bool
+mcci_tweetnacl_result_t
 mcci_tweetnacl_sign(
 	unsigned char *pSignedMessage,
 	size_t *pSignedMessageSize,
@@ -143,9 +143,9 @@ mcci_tweetnacl_sign(
 /// \param[in]	messageSize	size of signed message, in bytes
 /// \param[in]	pPublicKey	public key to be used to verify message.
 ///
-/// \returns true if successfully verified; in which case \p pMessage[] is set to the
+/// \returns zero if successfully verified; in which case \p pMessage[] is set to the
 ///		validated contents, and \p *pMessageSize is set to
-///		the size. Otherwise false, in which case \p pMessage[] may be changed
+///		the size. Otherwise non-zero, in which case \p pMessage[] may be changed
 ///		but should be ignored.
 ///
 /// \details
@@ -158,7 +158,7 @@ mcci_tweetnacl_sign(
 ////	messageSize must be at least 64.
 ///	The buffer at `pMessage` must be at least `messageSize` - 64 bytes long.
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_sign_open(
 	unsigned char *pMessage,
 	size_t *pMessageSize,
@@ -182,7 +182,7 @@ mcci_tweetnacl_sign_open(
 		);
 
 	*pMessageSize = (size_t) ullMessageSize;
-	return result == 0;
+	return result;
 	}
 
 /****************************************************************************\

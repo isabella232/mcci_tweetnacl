@@ -49,6 +49,7 @@ extern "C" {
 \****************************************************************************/
 
 ///
+///
 /// \brief abstract type for randombytes driver context
 ///
 /// This abstract type simply is passed through unmodified, and may be used
@@ -72,9 +73,47 @@ typedef enum mcci_tweetnacl_randombytes_error_e
 	MCCI_TWEETNACL_RANDOMBYTES_ERROR_CRYPTO_API_FAILED = 4,		///< the related crypto API failed
 	} mcci_tweetnacl_randombytes_error_t;
 
+///
+/// \brief symbolic type for result of TweetNaCl primitives
+///
+/// \ingroup mcci-tweetnacl
+///
+/// \details
+///	NaCl and TweetNaCl primitives generally return 0 for success,
+///	and non-zero (generally -1) for failures. We formerly converted
+///	to boolean as part of the API wrapper, but this proved to be
+///	a bad idea; the wrappers are too close to the underlying
+///	primitives. Now we return the same value returned by the primitive,
+///	but we use a typedef for clarity.
+///
+/// \see mcci_tweetnacl_result_is_success()
+/// \see mcci_tweetnacl_result_e
+///
+typedef int mcci_tweetnacl_result_t;
 
 ///
-/// \brief symbolic type for local random-number generator
+/// \brief result codes for TweetNaCl primitives
+///
+/// \ingroup mcci-tweetnacl
+///
+/// \details
+///	We define symbolic constants for success and the typical failure
+///	code. Note, however, that *any* non-zero value is a failure;
+///	codes should be tested using mcci_tweetnacl_result_is_success(),
+///	not by direct comparison. These codes should be used in `return`
+///	statements and other contexts where a result code is prepared,
+///	but not to analyze results.
+///
+/// \see mcci_tweetnacl_result_t
+///
+enum mcci_tweetnacl_result_e
+	{
+	MCCI_TWEETNACL_RESULT_SUCCESS,				///< API succeeded
+	MCCI_TWEETNACL_RESULT_FAILED = -1,			///< API failed
+	};
+
+///
+/// \brief symbolic type for function implementing local random-number generator
 ///
 /// \param[in] hDriver is the driver handle supplied to MCCI TweetNaCl at initialization.
 /// \param[out] pOutBuffer points to the buffer to be filled
@@ -88,7 +127,7 @@ typedef enum mcci_tweetnacl_randombytes_error_e
 ///
 /// \ingroup mcci-tweetnacl
 ///
-typedef mcci_tweetnacl_randombytes_error_t 
+typedef mcci_tweetnacl_randombytes_error_t
 (mcci_tweetnacl_randombytes_fn_t)(
 	mcci_tweetnacl_randombytes_handle_t hDriver,
 	unsigned char *pOutBuffer,
@@ -102,62 +141,78 @@ typedef mcci_tweetnacl_randombytes_error_t
 \****************************************************************************/
 
 ///
+/// \brief check whether an API result code indicates succcess
+///
+/// \param [in] resultCode
+///
+/// \returns \c true if result code indicates success, \c false otherwise.
+///
+/// \ingroup mcci-tweetnacl
+///
+static inline bool
+mcci_tweetnacl_result_is_success(
+	mcci_tweetnacl_result_t resultCode
+	)
+	{
+	return resultCode == 0;
+	}
+
 /// \brief Compare two 16-byte buffers, in a time-invariant fashion
 ///
 /// \param[in] x,y buffers to be compared.
-///	
+///
 /// \return true if the two buffers are equal, otherwise false.
 ///
 /// \see https://nacl.cr.yp.to/verify.html
 ///
 /// \ingroup string-comparison
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_verify_16(
 	const unsigned char *x,
 	const unsigned char *y
 	)
 	{
 	extern int crypto_verify_16_tweet(const unsigned char *,const unsigned char *);
-	return crypto_verify_16_tweet(x, y) == 0;
+	return crypto_verify_16_tweet(x, y);
 	}
 
 ///
 /// \brief Compare two 32-byte buffers, in a time-invariant fashion
 ///
 /// \param[in] x,y buffers to be compared.
-///	
+///
 /// \see https://nacl.cr.yp.to/verify.html
 ///
 /// \ingroup string-comparison
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_verify_32(
 	const unsigned char *x,
 	const unsigned char *y
 	)
 	{
 	extern int crypto_verify_32_tweet(const unsigned char *,const unsigned char *);
-	return crypto_verify_32_tweet(x, y) == 0;
+	return crypto_verify_32_tweet(x, y);
 	}
 
 ///
 /// \brief Compare two 64-byte buffers, in a time-invariant fashion
 ///
 /// \param[in] x,y buffers to be compared.
-///	
+///
 /// \see https://nacl.cr.yp.to/verify.html
 ///
 /// \ingroup string-comparison
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_verify_64(
 	const unsigned char *x,
 	const unsigned char *y
 	)
 	{
 	extern int crypto_verify_64_tweet_mcci(const unsigned char *,const unsigned char *);
-	return crypto_verify_64_tweet_mcci(x, y) == 0;
+	return crypto_verify_64_tweet_mcci(x, y);
 	}
 
 ///
@@ -172,7 +227,7 @@ mcci_tweetnacl_verify_64(
 ///
 /// \ingroup mcci-tweetnacl
 ///
-bool
+mcci_tweetnacl_result_t
 mcci_tweetnacl_configure_randombytes(
 	mcci_tweetnacl_randombytes_fn_t *pRandomBytesFn,
 	mcci_tweetnacl_randombytes_handle_t hDriver

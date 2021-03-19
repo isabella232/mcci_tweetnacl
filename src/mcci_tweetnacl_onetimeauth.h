@@ -96,11 +96,11 @@ mcci_tweetnacl_onetimeauth(
 /// \param[in]	nMessage	number of bytes in the message.
 /// \param[in]	pKey		the secret key
 ///
-/// \returns true if valid, false otherwise.
+/// \returns zero if valid, non-zero otherwise.
 ///
 /// \see https://nacl.cr.yp.to/onetimeauth.html
 ///
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_onetimeauth_verify(
 	const mcci_tweetnacl_onetimeauth_authenticator_t *pAuth,
 	const unsigned char *pMessage,
@@ -114,7 +114,7 @@ mcci_tweetnacl_onetimeauth_verify(
 		pMessage,
 		nMessage,
 		pKey->bytes
-		) == 0;
+		);
 	}
 
 /****************************************************************************\

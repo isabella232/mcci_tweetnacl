@@ -153,7 +153,7 @@ void mcci_tweetnacl_box_beforenm(
 /// \see https://nacl.cr.yp.to/box.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_box_afternm(
 	unsigned char *pCipherText,
 	const unsigned char *pPlainText,
@@ -169,7 +169,7 @@ mcci_tweetnacl_box_afternm(
 		sizeText,
 		pNonce->bytes,
 		pPrecomputed->bytes
-		) == 0;
+		);
 	}
 
 ///
@@ -181,7 +181,7 @@ mcci_tweetnacl_box_afternm(
 /// \param[in]	pNonce	  	pointer to 24-byte nonce
 /// \param[in]	pPrecomputed	pointer to 32-byte precomputed buffer.
 ///
-/// \returns true for successful decryption and authenticaion, false otherwise.
+/// \returns zero for successful decryption and authenticaion, -1 otherwise.
 ///
 /// \note \p pCipherText must start with a string of 
 ///	`sizeof(mcci_tweetnacl_box_cipherzero_t::bytes)` bytes of zero. The
@@ -193,7 +193,7 @@ mcci_tweetnacl_box_afternm(
 /// \see https://nacl.cr.yp.to/box.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_box_open_afternm(
 	unsigned char *pPlainText,
 	const unsigned char *pCipherText,
@@ -209,7 +209,7 @@ mcci_tweetnacl_box_open_afternm(
 		sizeText,
 		pNonce->bytes,
 		pPrecomputed->bytes
-		) == 0;
+		);
 	}
 
 ///
@@ -234,7 +234,7 @@ mcci_tweetnacl_box_open_afternm(
 /// \see https://nacl.cr.yp.to/box.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_box(
 	unsigned char *pCipherText,
 	const unsigned char *pPlainText,
@@ -252,7 +252,7 @@ mcci_tweetnacl_box(
 		pNonce->bytes,
 		pPublicKey->bytes,
 		pPrivateKey->bytes
-		) == 0;
+		);
 	}
 
 ///
@@ -265,7 +265,7 @@ mcci_tweetnacl_box(
 /// \param[in]	pPublicKey	pointer to 32-byte public key of sender
 /// \param[in]	pPrivateKey	pointer to 32-byte private key of receiver
 ///
-/// \returns true for successful decryption and authenticaion, false otherwise.
+/// \returns 0 for successful decryption and authentication, -1 otherwise.
 ///
 /// \note \p pCipherText must start with a string of 
 ///	`sizeof(mcci_tweetnacl_secretbox_cipherzero_t::bytes)` bytes of zero. The
@@ -277,7 +277,7 @@ mcci_tweetnacl_box(
 /// \see https://nacl.cr.yp.to/box.html
 ///
 
-static inline bool
+static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_box_open(
 	unsigned char *pPlainText,
 	const unsigned char *pCipherText,
@@ -295,7 +295,7 @@ mcci_tweetnacl_box_open(
 		pNonce->bytes,
 		pPublicKey->bytes,
 		pPrivateKey->bytes
-		) == 0;
+		);
 	}
 
 /****************************************************************************\

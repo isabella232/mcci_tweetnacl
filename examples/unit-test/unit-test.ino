@@ -178,7 +178,7 @@ test(10_sha)
 		}
 	safePrintf("\n");
 	assertEqual(memcmp(&output, &expected, sizeof(output)), 0, "hash didn't match with memcpy");
-	assertTrue(mcci_tweetnacl_verify_64(output.bytes, expected.bytes), "verify_64 didn't match");
+	assertTrue(mcci_tweetnacl_result_is_success(mcci_tweetnacl_verify_64(output.bytes, expected.bytes)), "verify_64 didn't match");
 	}
 
 test(11_sha)
@@ -202,7 +202,7 @@ test(11_sha)
 //		}
 //	safePrintf("\n");
 	assertEqual(memcmp(&output, &expected, sizeof(output)), 0, "hash didn't match with memcpy");
-	assertTrue(mcci_tweetnacl_verify_64(output.bytes, expected.bytes), "verify_64 didn't match");
+	assertTrue(mcci_tweetnacl_result_is_success(mcci_tweetnacl_verify_64(output.bytes, expected.bytes)), "verify_64 didn't match");
 	}
 
 // skip this test if previous test failed
@@ -456,7 +456,7 @@ test(20_sign_open)
 		auto tElapsed = millis() - tStart;
 		tTotal += tElapsed;
 
-		assertTrue(result, "sign_open failed");
+		assertTrue(mcci_tweetnacl_result_is_success(result), "sign_open failed");
 		assertEqual(nActual, v->nMessage, "Message length wrong");
 		assertEqual(memcmp(buf, v->pMessage, nActual), 0, "Message value wrong");
 		}
