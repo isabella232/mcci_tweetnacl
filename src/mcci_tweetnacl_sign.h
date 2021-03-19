@@ -182,7 +182,7 @@ mcci_tweetnacl_sign_open(
 		);
 
 	*pMessageSize = (size_t) ullMessageSize;
-	return result;
+	return result == 0;
 	}
 
 /****************************************************************************\
