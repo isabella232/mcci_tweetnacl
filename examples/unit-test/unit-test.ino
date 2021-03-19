@@ -191,7 +191,7 @@ test(11_sha)
 		};
 
 	auto tStart = millis();
-	mcci_tweetnacl_hash_sha512(&output, input, sizeof(input) - 1);
+	mcci_tweetnacl_hash_sha512(&output, input, sizeof(input));
 	auto tElapsed = millis() - tStart;
 
 	safePrintf("Elapsed time for 4096 bytes: %u ms\n", tElapsed);
