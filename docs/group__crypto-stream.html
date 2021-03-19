@@ -116,9 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad89e85dfeafd8e2cfc9c455b71fb69ca"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-stream.html#gad89e85dfeafd8e2cfc9c455b71fb69ca">mcci_tweetnacl_onetimeauth</a> (<a class="el" href="structmcci__tweetnacl__onetimeauth__authenticator__t.html">mcci_tweetnacl_onetimeauth_authenticator_t</a> *pAuth, const unsigned char *pMessage, size_t nMessage, const <a class="el" href="structmcci__tweetnacl__onetimeauth__key__t.html">mcci_tweetnacl_onetimeauth_key_t</a> *pKey)</td></tr>
 <tr class="memdesc:gad89e85dfeafd8e2cfc9c455b71fb69ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate one-time authenticator for a given message and secret key.  <a href="group__crypto-stream.html#gad89e85dfeafd8e2cfc9c455b71fb69ca">More...</a><br /></td></tr>
 <tr class="separator:gad89e85dfeafd8e2cfc9c455b71fb69ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd84d5d1e3b6d0d33c311368ef2fa27f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-stream.html#gafd84d5d1e3b6d0d33c311368ef2fa27f">mcci_tweetnacl_onetimeauth_verify</a> (const <a class="el" href="structmcci__tweetnacl__onetimeauth__authenticator__t.html">mcci_tweetnacl_onetimeauth_authenticator_t</a> *pAuth, const unsigned char *pMessage, size_t nMessage, const <a class="el" href="structmcci__tweetnacl__onetimeauth__key__t.html">mcci_tweetnacl_onetimeauth_key_t</a> *pKey)</td></tr>
-<tr class="memdesc:gafd84d5d1e3b6d0d33c311368ef2fa27f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify message given one-time authenticator and secret key.  <a href="group__crypto-stream.html#gafd84d5d1e3b6d0d33c311368ef2fa27f">More...</a><br /></td></tr>
-<tr class="separator:gafd84d5d1e3b6d0d33c311368ef2fa27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd982ef61127f9c54cfb5ec52bd134ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__mcci-tweetnacl.html#gaa4b6434a2417ffb3a7b6292f8e20b03f">mcci_tweetnacl_result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-stream.html#gadd982ef61127f9c54cfb5ec52bd134ad">mcci_tweetnacl_onetimeauth_verify</a> (const <a class="el" href="structmcci__tweetnacl__onetimeauth__authenticator__t.html">mcci_tweetnacl_onetimeauth_authenticator_t</a> *pAuth, const unsigned char *pMessage, size_t nMessage, const <a class="el" href="structmcci__tweetnacl__onetimeauth__key__t.html">mcci_tweetnacl_onetimeauth_key_t</a> *pKey)</td></tr>
+<tr class="memdesc:gadd982ef61127f9c54cfb5ec52bd134ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify message given one-time authenticator and secret key.  <a href="group__crypto-stream.html#gadd982ef61127f9c54cfb5ec52bd134ad">More...</a><br /></td></tr>
+<tr class="separator:gadd982ef61127f9c54cfb5ec52bd134ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaee0eb183397053ec15502f7ae6ec6362"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__crypto-stream.html#gaee0eb183397053ec15502f7ae6ec6362">mcci_tweetnacl_stream</a> (unsigned char *pOutText, size_t sizeText, const <a class="el" href="structmcci__tweetnacl__stream__nonce__t.html">mcci_tweetnacl_stream_nonce_t</a> *pNonce, const <a class="el" href="structmcci__tweetnacl__stream__key__t.html">mcci_tweetnacl_stream_key_t</a> *pKey)</td></tr>
 <tr class="memdesc:gaee0eb183397053ec15502f7ae6ec6362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate stream of crypto bytes.  <a href="group__crypto-stream.html#gaee0eb183397053ec15502f7ae6ec6362">More...</a><br /></td></tr>
 <tr class="separator:gaee0eb183397053ec15502f7ae6ec6362"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -328,8 +328,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gafd84d5d1e3b6d0d33c311368ef2fa27f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafd84d5d1e3b6d0d33c311368ef2fa27f">&#9670;&nbsp;</a></span>mcci_tweetnacl_onetimeauth_verify()</h2>
+<a id="gadd982ef61127f9c54cfb5ec52bd134ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd982ef61127f9c54cfb5ec52bd134ad">&#9670;&nbsp;</a></span>mcci_tweetnacl_onetimeauth_verify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,7 +338,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool mcci_tweetnacl_onetimeauth_verify </td>
+          <td class="memname">static <a class="el" href="group__mcci-tweetnacl.html#gaa4b6434a2417ffb3a7b6292f8e20b03f">mcci_tweetnacl_result_t</a> mcci_tweetnacl_onetimeauth_verify </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structmcci__tweetnacl__onetimeauth__authenticator__t.html">mcci_tweetnacl_onetimeauth_authenticator_t</a> *&#160;</td>
           <td class="paramname"><em>pAuth</em>, </td>
@@ -384,7 +384,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if valid, false otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zero if valid, non-zero otherwise.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://nacl.cr.yp.to/onetimeauth.html">https://nacl.cr.yp.to/onetimeauth.html</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="mcci__tweetnacl__onetimeauth_8h_source.html#l00104">104</a> of file <a class="el" href="mcci__tweetnacl__onetimeauth_8h_source.html">mcci_tweetnacl_onetimeauth.h</a>.</p>
@@ -676,7 +676,7 @@ crypto_onetimeauth </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Mar 18 2021 17:07:03 for MCCI TweetNaCl by
+    <li class="footer">Generated on Fri Mar 19 2021 19:07:56 for MCCI TweetNaCl by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

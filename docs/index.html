@@ -102,7 +102,7 @@ Approach</h1>
 <ul>
 <li>Rather than compile <code>tweetnacl.c</code> directly, we <code>#include</code> it from <code>src/lib/mcci_tweetnacl.c</code>.</li>
 <li><code>mcci_tweetnacl.c</code> defines <code>randombytes</code> as a macro that resolves to <code>mcci_tweetnacl_hal_randombytes</code>.</li>
-<li><code>src/hal/mcci_tweetnacl_hal_randombytes.c</code> declares two functions, <code><a class="el" href="group__mcci-tweetnacl.html#ga99bde129a754db10ffe041cc1cc84cce" title="generate stream of random bytes">mcci_tweetnacl_hal_randombytes()</a></code> and <code><a class="el" href="group__mcci-tweetnacl.html#ga2aa8a12830def464098d46eb1414b5ec" title="setup the random number generator connection">mcci_tweetnacl_configure_randombytes()</a></code>. The latter allows the client to establish a random number driver at initialization time; the former uses the pointer given by the user to call the random number driver.</li>
+<li><code>src/hal/mcci_tweetnacl_hal_randombytes.c</code> declares two functions, <code><a class="el" href="group__mcci-tweetnacl.html#ga99bde129a754db10ffe041cc1cc84cce" title="generate stream of random bytes">mcci_tweetnacl_hal_randombytes()</a></code> and <code><a class="el" href="group__mcci-tweetnacl.html#ga1c642145c279fa38d50c65cd98af5088" title="setup the random number generator connection">mcci_tweetnacl_configure_randombytes()</a></code>. The latter allows the client to establish a random number driver at initialization time; the former uses the pointer given by the user to call the random number driver.</li>
 <li><code>tweetnacl.c</code> has no provision for the random number generator failing. However, they can fail. The wrappers for the library routines that call <code>randombytes</code> therefore use <code>setjmp()</code> and <code>longjmp()</code> to implement a simple abort system.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
@@ -123,7 +123,7 @@ Trademarks</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Mar 18 2021 17:07:04 for MCCI TweetNaCl by
+    <li class="footer">Generated on Fri Mar 19 2021 19:07:57 for MCCI TweetNaCl by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

@@ -18,7 +18,7 @@
     </TokenIdentifier>
     <Path>group__mcci-tweetnacl.html</Path>
     <Anchor>gad6687bf56a404fdc412864d31d3d7920</Anchor>
-    <Abstract>symbolic type for local random-number generator</Abstract>
+    <Abstract>symbolic type for function implementing local random-number generator</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
   <Token>
@@ -34,12 +34,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>mcci_tweetnacl_result_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>gaa4b6434a2417ffb3a7b6292f8e20b03f</Anchor>
+    <Abstract>symbolic type for result of TweetNaCl primitives</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>mcci_tweetnacl_configure_randombytes</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__mcci-tweetnacl.html</Path>
-    <Anchor>ga2aa8a12830def464098d46eb1414b5ec</Anchor>
+    <Anchor>ga1c642145c279fa38d50c65cd98af5088</Anchor>
     <Abstract>setup the random number generator connection</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -67,12 +78,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>mcci_tweetnacl_result_is_success</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>ga23f1934f2374360ef1e87d74df5b7d1d</Anchor>
+    <Abstract>check whether an API result code indicates succcess</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>mcci_tweetnacl_verify_16</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>ga0dc0b41cb67a41d3360484c21a6ca87a</Anchor>
+    <Anchor>ga1490367b353af5a003f3e95309cf580f</Anchor>
     <Abstract>Compare two 16-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -83,7 +105,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>gab436aeb4b63f870f52ee0dfdbe0146f5</Anchor>
+    <Anchor>ga34e98b9c5b20fe0728a4bc0564515ed9</Anchor>
     <Abstract>Compare two 32-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -94,7 +116,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>ga653c75f6d805d37bf3e790d826095a06</Anchor>
+    <Anchor>ga9869992c81230c3c8cf5d68713829a03</Anchor>
     <Abstract>Compare two 64-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -126,7 +148,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-auth.html</Path>
-    <Anchor>ga681f8cda5b5683160f1b64e814fd2bb8</Anchor>
+    <Anchor>ga7fb2b177fe6e83d2be1cc0f84353074e</Anchor>
     <Abstract>Secret-key message authentication: verify authenticity (HMAC)</Abstract>
     <DeclaredIn>mcci_tweetnacl_auth.h</DeclaredIn>
   </Token>
@@ -147,7 +169,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>gaf2b6c60a44b4973f60156f2569f03517</Anchor>
+    <Anchor>gab1d3cfb049d467bcfd922339aa02a0c9</Anchor>
     <Abstract>Public-key authenticated encryption.</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -158,7 +180,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>ga7caf400c3d6e71aa4d4efdeb97cc4506</Anchor>
+    <Anchor>ga3b6118997a09982d7e6d1b6d45824ae9</Anchor>
     <Abstract>Public-key authenticated encryption (precomputed)</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -191,7 +213,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>gae4726688cb92256af11da097aa593712</Anchor>
+    <Anchor>ga95b2905d7ca4efda437d3ab5ec125c31</Anchor>
     <Abstract>Public-key authenticated decryption.</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -202,7 +224,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>ga905694322dddb701dfc17ecfae3f8d7b</Anchor>
+    <Anchor>gaf28ebdd9aaa43b7977a7384403487e96</Anchor>
     <Abstract>Public-key authenticated decryption (precomputed))</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -309,7 +331,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-stream.html</Path>
-    <Anchor>gafd84d5d1e3b6d0d33c311368ef2fa27f</Anchor>
+    <Anchor>gadd982ef61127f9c54cfb5ec52bd134ad</Anchor>
     <Abstract>Verify message given one-time authenticator and secret key.</Abstract>
     <DeclaredIn>mcci_tweetnacl_onetimeauth.h</DeclaredIn>
   </Token>
@@ -362,7 +384,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-secretbox.html</Path>
-    <Anchor>gaeb651ece545cf05f27e77b3907361066</Anchor>
+    <Anchor>gaaaaa93dfb0cc3b971e5548a9c6bf0fec</Anchor>
     <Abstract>Secret-key authenticated encryption (using xsalsa20)</Abstract>
     <DeclaredIn>mcci_tweetnacl_secretbox.h</DeclaredIn>
   </Token>
@@ -373,7 +395,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-secretbox.html</Path>
-    <Anchor>gac25c66b5dc1977f7fe90652ce9532e55</Anchor>
+    <Anchor>ga84d63d424536e0113bcf48251df3310d</Anchor>
     <Abstract>Secret-key authenticated decryption (using xsalsa20)</Abstract>
     <DeclaredIn>mcci_tweetnacl_secretbox.h</DeclaredIn>
   </Token>
@@ -405,7 +427,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-sign.html</Path>
-    <Anchor>ga58df22b740b29986b5a84512b51a195d</Anchor>
+    <Anchor>gaa4e063e6b0b1c6d0c6ec025aa66a1d79</Anchor>
     <Abstract>sign a message (typically a hash of the real message)</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
@@ -427,7 +449,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-sign.html</Path>
-    <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
+    <Anchor>ga12c08aede825cb29d6a58b94d121529c</Anchor>
     <Abstract>given a signed message, verify and output signed contents</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
@@ -575,7 +597,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-sign.html</Path>
-    <Anchor>ga58df22b740b29986b5a84512b51a195d</Anchor>
+    <Anchor>gaa4e063e6b0b1c6d0c6ec025aa66a1d79</Anchor>
     <Abstract>sign a message (typically a hash of the real message)</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
@@ -597,7 +619,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-sign.html</Path>
-    <Anchor>gac0790c80b4f1c1987615edb2e4508385</Anchor>
+    <Anchor>ga12c08aede825cb29d6a58b94d121529c</Anchor>
     <Abstract>given a signed message, verify and output signed contents</Abstract>
     <DeclaredIn>mcci_tweetnacl_sign.h</DeclaredIn>
   </Token>
@@ -623,7 +645,7 @@
     </TokenIdentifier>
     <Path>group__mcci-tweetnacl.html</Path>
     <Anchor>gad6687bf56a404fdc412864d31d3d7920</Anchor>
-    <Abstract>symbolic type for local random-number generator</Abstract>
+    <Abstract>symbolic type for function implementing local random-number generator</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
   <Token>
@@ -639,12 +661,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>mcci_tweetnacl_result_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>gaa4b6434a2417ffb3a7b6292f8e20b03f</Anchor>
+    <Abstract>symbolic type for result of TweetNaCl primitives</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>mcci_tweetnacl_configure_randombytes</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__mcci-tweetnacl.html</Path>
-    <Anchor>ga2aa8a12830def464098d46eb1414b5ec</Anchor>
+    <Anchor>ga1c642145c279fa38d50c65cd98af5088</Anchor>
     <Abstract>setup the random number generator connection</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -679,6 +712,17 @@
     <Path>group__mcci-tweetnacl.html</Path>
     <Anchor>ga9eb4a925d17929d8587db209e3b5a279</Anchor>
     <Abstract>Change the last error cell for the randombytes() mechanism.</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mcci_tweetnacl_result_is_success</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>ga23f1934f2374360ef1e87d74df5b7d1d</Anchor>
+    <Abstract>check whether an API result code indicates succcess</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
   <Token>
@@ -738,6 +782,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MCCI_TWEETNACL_RESULT_SUCCESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>gga86a022d069affb10631224933c4a729baee85aefa8fbd0915504b1f55a1754123</Anchor>
+    <Abstract>API succeeded.</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MCCI_TWEETNACL_RESULT_FAILED</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__mcci-tweetnacl.html</Path>
+    <Anchor>gga86a022d069affb10631224933c4a729baddcf5d6ad6c4aa523800e3934c60ec07</Anchor>
+    <Abstract>API failed.</Abstract>
+    <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>string-comparison</Name>
       <APILanguage>c</APILanguage>
     </TokenIdentifier>
@@ -750,7 +816,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>ga0dc0b41cb67a41d3360484c21a6ca87a</Anchor>
+    <Anchor>ga1490367b353af5a003f3e95309cf580f</Anchor>
     <Abstract>Compare two 16-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -761,7 +827,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>gab436aeb4b63f870f52ee0dfdbe0146f5</Anchor>
+    <Anchor>ga34e98b9c5b20fe0728a4bc0564515ed9</Anchor>
     <Abstract>Compare two 32-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -772,7 +838,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__string-comparison.html</Path>
-    <Anchor>ga653c75f6d805d37bf3e790d826095a06</Anchor>
+    <Anchor>ga9869992c81230c3c8cf5d68713829a03</Anchor>
     <Abstract>Compare two 64-byte buffers, in a time-invariant fashion.</Abstract>
     <DeclaredIn>mcci_tweetnacl.h</DeclaredIn>
   </Token>
@@ -808,7 +874,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-auth.html</Path>
-    <Anchor>ga681f8cda5b5683160f1b64e814fd2bb8</Anchor>
+    <Anchor>ga7fb2b177fe6e83d2be1cc0f84353074e</Anchor>
     <Abstract>Secret-key message authentication: verify authenticity (HMAC)</Abstract>
     <DeclaredIn>mcci_tweetnacl_auth.h</DeclaredIn>
   </Token>
@@ -826,7 +892,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>gaf2b6c60a44b4973f60156f2569f03517</Anchor>
+    <Anchor>gab1d3cfb049d467bcfd922339aa02a0c9</Anchor>
     <Abstract>Public-key authenticated encryption.</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -837,7 +903,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>ga7caf400c3d6e71aa4d4efdeb97cc4506</Anchor>
+    <Anchor>ga3b6118997a09982d7e6d1b6d45824ae9</Anchor>
     <Abstract>Public-key authenticated encryption (precomputed)</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -870,7 +936,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>gae4726688cb92256af11da097aa593712</Anchor>
+    <Anchor>ga95b2905d7ca4efda437d3ab5ec125c31</Anchor>
     <Abstract>Public-key authenticated decryption.</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -881,7 +947,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-box.html</Path>
-    <Anchor>ga905694322dddb701dfc17ecfae3f8d7b</Anchor>
+    <Anchor>gaf28ebdd9aaa43b7977a7384403487e96</Anchor>
     <Abstract>Public-key authenticated decryption (precomputed))</Abstract>
     <DeclaredIn>mcci_tweetnacl_box.h</DeclaredIn>
   </Token>
@@ -983,7 +1049,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-stream.html</Path>
-    <Anchor>gafd84d5d1e3b6d0d33c311368ef2fa27f</Anchor>
+    <Anchor>gadd982ef61127f9c54cfb5ec52bd134ad</Anchor>
     <Abstract>Verify message given one-time authenticator and secret key.</Abstract>
     <DeclaredIn>mcci_tweetnacl_onetimeauth.h</DeclaredIn>
   </Token>
@@ -1045,7 +1111,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-secretbox.html</Path>
-    <Anchor>gaeb651ece545cf05f27e77b3907361066</Anchor>
+    <Anchor>gaaaaa93dfb0cc3b971e5548a9c6bf0fec</Anchor>
     <Abstract>Secret-key authenticated encryption (using xsalsa20)</Abstract>
     <DeclaredIn>mcci_tweetnacl_secretbox.h</DeclaredIn>
   </Token>
@@ -1056,7 +1122,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>group__crypto-secretbox.html</Path>
-    <Anchor>gac25c66b5dc1977f7fe90652ce9532e55</Anchor>
+    <Anchor>ga84d63d424536e0113bcf48251df3310d</Anchor>
     <Abstract>Secret-key authenticated decryption (using xsalsa20)</Abstract>
     <DeclaredIn>mcci_tweetnacl_secretbox.h</DeclaredIn>
   </Token>

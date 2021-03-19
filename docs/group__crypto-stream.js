@@ -15,7 +15,7 @@ var group__crypto_stream =
     [ "mcci_tweetnacl_core_hsalsa20", "group__crypto-stream.html#ga1bf31fecd74f18efd7583f9240a7c202", null ],
     [ "mcci_tweetnacl_core_salsa20", "group__crypto-stream.html#ga7f19b2f3d943f5cad1341cfce9360bce", null ],
     [ "mcci_tweetnacl_onetimeauth", "group__crypto-stream.html#gad89e85dfeafd8e2cfc9c455b71fb69ca", null ],
-    [ "mcci_tweetnacl_onetimeauth_verify", "group__crypto-stream.html#gafd84d5d1e3b6d0d33c311368ef2fa27f", null ],
+    [ "mcci_tweetnacl_onetimeauth_verify", "group__crypto-stream.html#gadd982ef61127f9c54cfb5ec52bd134ad", null ],
     [ "mcci_tweetnacl_stream", "group__crypto-stream.html#gaee0eb183397053ec15502f7ae6ec6362", null ],
     [ "mcci_tweetnacl_stream_salsa20", "group__crypto-stream.html#ga3e1c6fb1ec0c4a9a4395e202b87a58ce", null ],
     [ "mcci_tweetnacl_stream_salsa20_xor", "group__crypto-stream.html#ga07470762f42e5ce7541a8fac82d00212", null ],

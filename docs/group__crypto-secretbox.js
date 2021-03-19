@@ -12,6 +12,6 @@ var group__crypto_secretbox =
     [ "mcci_tweetnacl_secretbox_nonce_t", "structmcci__tweetnacl__secretbox__nonce__t.html", [
       [ "bytes", "structmcci__tweetnacl__secretbox__nonce__t.html#a5a8df000eb34b55fcec6203a5c8f7227", null ]
     ] ],
-    [ "mcci_tweetnacl_secretbox", "group__crypto-secretbox.html#gaeb651ece545cf05f27e77b3907361066", null ],
-    [ "mcci_tweetnacl_secretbox_open", "group__crypto-secretbox.html#gac25c66b5dc1977f7fe90652ce9532e55", null ]
+    [ "mcci_tweetnacl_secretbox", "group__crypto-secretbox.html#gaaaaa93dfb0cc3b971e5548a9c6bf0fec", null ],
+    [ "mcci_tweetnacl_secretbox_open", "group__crypto-secretbox.html#ga84d63d424536e0113bcf48251df3310d", null ]
 ];

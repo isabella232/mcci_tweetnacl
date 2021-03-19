@@ -18,10 +18,10 @@ var group__crypto_box =
     [ "mcci_tweetnacl_box_publickey_t", "structmcci__tweetnacl__box__publickey__t.html", [
       [ "bytes", "structmcci__tweetnacl__box__publickey__t.html#acac8aa60654b5032e431fa693c658e55", null ]
     ] ],
-    [ "mcci_tweetnacl_box", "group__crypto-box.html#gaf2b6c60a44b4973f60156f2569f03517", null ],
-    [ "mcci_tweetnacl_box_afternm", "group__crypto-box.html#ga7caf400c3d6e71aa4d4efdeb97cc4506", null ],
+    [ "mcci_tweetnacl_box", "group__crypto-box.html#gab1d3cfb049d467bcfd922339aa02a0c9", null ],
+    [ "mcci_tweetnacl_box_afternm", "group__crypto-box.html#ga3b6118997a09982d7e6d1b6d45824ae9", null ],
     [ "mcci_tweetnacl_box_beforenm", "group__crypto-box.html#ga698349212c01ad88a3d6e1ce392feec2", null ],
     [ "mcci_tweetnacl_box_keypair", "group__crypto-box.html#ga8ebd700839c4a2c7720e5d8afeded8c8", null ],
-    [ "mcci_tweetnacl_box_open", "group__crypto-box.html#gae4726688cb92256af11da097aa593712", null ],
-    [ "mcci_tweetnacl_box_open_afternm", "group__crypto-box.html#ga905694322dddb701dfc17ecfae3f8d7b", null ]
+    [ "mcci_tweetnacl_box_open", "group__crypto-box.html#ga95b2905d7ca4efda437d3ab5ec125c31", null ],
+    [ "mcci_tweetnacl_box_open_afternm", "group__crypto-box.html#gaf28ebdd9aaa43b7977a7384403487e96", null ]
 ];

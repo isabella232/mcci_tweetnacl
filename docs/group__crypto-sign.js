@@ -10,7 +10,7 @@ var group__crypto_sign =
       [ "bytes", "structmcci__tweetnacl__sign__signature__t.html#aa96801f1e893a5650cd30a363f1221f3", null ]
     ] ],
     [ "mcci_tweetnacl_sign_signature_size", "group__crypto-sign.html#ga2f7a3e7114314e689e227738521c50d4", null ],
-    [ "mcci_tweetnacl_sign", "group__crypto-sign.html#ga58df22b740b29986b5a84512b51a195d", null ],
+    [ "mcci_tweetnacl_sign", "group__crypto-sign.html#gaa4e063e6b0b1c6d0c6ec025aa66a1d79", null ],
     [ "mcci_tweetnacl_sign_keypair", "group__crypto-sign.html#gac51e57fa76c278a30aa504ae04aaa212", null ],
-    [ "mcci_tweetnacl_sign_open", "group__crypto-sign.html#gac0790c80b4f1c1987615edb2e4508385", null ]
+    [ "mcci_tweetnacl_sign_open", "group__crypto-sign.html#ga12c08aede825cb29d6a58b94d121529c", null ]
 ];
