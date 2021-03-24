@@ -134,9 +134,10 @@ void setup_printSignOn()
 
     safePrintf("\n%s%s\n", dashes, dashes);
 
-    safePrintf("This is %s v%d.%d.%d.%d.\n",
+    safePrintf("This is %s v%d.%d.%d.%d %s %s.\n",
         filebasename(__FILE__),
-        getMajor(kAppVersion), getMinor(kAppVersion), getPatch(kAppVersion), getLocal(kAppVersion)
+        getMajor(kAppVersion), getMinor(kAppVersion), getPatch(kAppVersion), getLocal(kAppVersion),
+	__DATE__, __TIME__
         );
 
     safePrintf("%s%s\n" "\n", dashes, dashes);
@@ -171,12 +172,12 @@ test(10_sha)
 
 	mcci_tweetnacl_hash_sha512(&output, input, sizeof(input) - 1);
 
-	safePrintf("sha output:\n");
-	for (auto v: output.bytes)
-		{
-		safePrintf("%02x ", v);
-		}
-	safePrintf("\n");
+//	safePrintf("sha output:\n");
+//	for (auto v: output.bytes)
+//		{
+//		safePrintf("%02x ", v);
+//		}
+//	safePrintf("\n");
 	assertEqual(memcmp(&output, &expected, sizeof(output)), 0, "hash didn't match with memcpy");
 	assertTrue(mcci_tweetnacl_result_is_success(mcci_tweetnacl_verify_64(output.bytes, expected.bytes)), "verify_64 didn't match");
 	}
@@ -189,6 +190,9 @@ test(11_sha)
 		{
 		0x2d, 0x23, 0x91, 0x3d, 0x37, 0x59, 0xef, 0x01, 0x70, 0x4a, 0x86, 0xb4, 0xbe, 0xe3, 0xac, 0x8a, 0x29, 0x00, 0x23, 0x13, 0xec, 0xc9, 0x8a, 0x74, 0x24, 0x42, 0x5a, 0x78, 0x17, 0x0f, 0x21, 0x95, 0x77, 0x82, 0x2f, 0xd7, 0x7e, 0x4a, 0xe9, 0x63, 0x13, 0x54, 0x76, 0x96, 0xad, 0x7d, 0x59, 0x49, 0xb5, 0x8e, 0x12, 0xd5, 0x06, 0x3e, 0xf2, 0xee, 0x06, 0x3b, 0x59, 0x57, 0x40, 0xa3, 0xa1, 0x2d,
 		};
+
+	// pause to give USB a chance to catch up
+	delay(1000);
 
 	auto tStart = millis();
 	mcci_tweetnacl_hash_sha512(&output, input, sizeof(input));
@@ -468,6 +472,8 @@ test(20_sign_open)
 test(30_sign)
 	{
 	unsigned i = 0;
+	uint32_t tTotal = 0;
+
 	safePrintf("Sign checks: ");
 	for (auto &&v : vecs)
 		{
@@ -475,6 +481,7 @@ test(30_sign)
 		++i;
 		safePrintf("%u ", i);
 
+		auto tStart = millis();
 		mcci_tweetnacl_sign(
 			buf,
 			&nActual,
@@ -482,9 +489,12 @@ test(30_sign)
 			v->nMessage,
 			&v->Secret
 			);
+		auto tElapsed = millis() - tStart;
+		tTotal += tElapsed;
 
 		assertEqual(nActual, v->nSignature, "Signature length wrong");
 		assertEqual(memcmp(buf, v->pSignature, nActual), 0, "Signature value wrong");
 		}
 	safePrintf("\n");
+	safePrintf("average time: %u ms\n", tTotal / i);
 	}
