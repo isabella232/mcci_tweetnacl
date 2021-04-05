@@ -129,8 +129,9 @@ static inline void mcci_tweetnacl_hashblocks_sha512_init(
 /// \brief Finish partial calculation of sha512 hash of message
 ///
 /// \param[inout] pHash carries the current state
-/// \param[in] pMessage is the message to be hashed
+/// \param[in] pMessage is the remainder of message to be hashed
 /// \param[in] nMessage is the length of the message in bytes
+/// \param[in] nOverall is the overall length of the message.
 ///
 /// \details SHA512 processes the message in 128-byte chunks.
 ///	To accomodate variable-length text, SHA512 always appends
@@ -139,19 +140,25 @@ static inline void mcci_tweetnacl_hashblocks_sha512_init(
 ///	that, assuming that all but nMessage % 128 bytes have already been
 ///	incorporated in the hash.
 ///
+///	\p pMessage and \p nMessage are first adjusted to remove any complete
+///	128-byte blocks from the head of the buffer. nOverall is not adjusted,
+///	and represents the overall size of the message.
+///
 /// \see https://nacl.cr.yp.to/hash.html
 ///
 static inline void mcci_tweetnacl_hashblocks_sha512_finish(
 	mcci_tweetnacl_sha512_t *pHash,
 	const unsigned char *pMessage,
-	size_t nMessage
+	size_t nMessage,
+	size_t nOverall
 	)
 	{
-	extern int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *,const unsigned char *,unsigned long long);
+	extern int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *,const unsigned char *,unsigned long long,unsigned long long);
 	(void) crypto_hashblocks_sha512_tweet_mcci_finish(
 		pHash->bytes,
 		pMessage,
-		nMessage
+		nMessage,
+		nOverall
 		);
 	}
 
