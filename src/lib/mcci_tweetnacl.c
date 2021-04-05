@@ -31,7 +31,7 @@ Author:
 
 int crypto_verify_64_tweet_mcci(const unsigned char *x,const unsigned char *y);
 int crypto_hashblocks_sha512_tweet_mcci_init(unsigned char *pOut);
-int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *h,const unsigned char *m, unsigned long long n);
+int crypto_hashblocks_sha512_tweet_mcci_finish(unsigned char *h,const unsigned char *m, unsigned long long n, unsigned long long b);
 
 /****************************************************************************\
 |
@@ -64,14 +64,17 @@ int crypto_hashblocks_sha512_tweet_mcci_init(u8 *pOut)
   return 0;
 }
 
-int crypto_hashblocks_sha512_tweet_mcci_finish(u8 *h,const u8 *m,u64 n)
+int crypto_hashblocks_sha512_tweet_mcci_finish(u8 *out,const u8 *m,u64 n,u64 b)
 {
+  u8 h[64];
   u8 x[256];
-  u64 i,b = n;
+  u64 i;
 
   m += n;
   n &= 127;
   m -= n;
+
+  FOR(i,64) h[i] = out[i];
 
   FOR(i,256) x[i] = 0;
   FOR(i,n) x[i] = m[i];
@@ -81,6 +84,8 @@ int crypto_hashblocks_sha512_tweet_mcci_finish(u8 *h,const u8 *m,u64 n)
   x[n-9] = b >> 61;
   ts64(x+n-8,b<<3);
   crypto_hashblocks(h,x,n);
+
+  FOR(i,64) out[i] = h[i];
 
   return 0;
 }
