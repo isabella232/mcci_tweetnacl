@@ -155,8 +155,10 @@ mcci_tweetnacl_sign(
 ///	the result and narrow it when copying back to the client.
 ///
 /// \note
-////	messageSize must be at least 64.
-///	The buffer at `pMessage` must be at least `messageSize` - 64 bytes long.
+///	\p messageSize must be at least 64.
+///	The buffer at \p pMessage must be at least \p messageSize bytes long;
+///	which is 64 bytes larger than the final verified message; the extra
+///	bytes are used while verifying.
 ///
 static inline mcci_tweetnacl_result_t
 mcci_tweetnacl_sign_open(
