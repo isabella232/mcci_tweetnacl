@@ -47,7 +47,11 @@ We added a structured lower edge providing a random number generation API.  (A s
 
 ### License
 
-The top-level wrappers are released under the [MIT](./LICENSE) license. Commercial licenses are also available from MCCI Corporation. The TweetNaCl and NaCl code is all public domain (including MCCI contributions in those directories).
+The top-level wrappers, documentation, and examples are released under the [MIT](./LICENSE.md) license. Commercial licenses and support are also available from MCCI Corporation. This covers all content other than `extra/reference_nacl`, `extra/reference_tweetnacl`, and `extra/seatest`, which have their own licenses.
+
+The TweetNaCl and NaCl code in directories `extra/reference_tweetnacl` and `extra/reference_nacl` is all public domain (including MCCI contributions in those directories).
+
+The `seatest` code in directory `extra/seatest` is covered by its own MIT license.
 
 ### Support Open Source Hardware and Software
 
